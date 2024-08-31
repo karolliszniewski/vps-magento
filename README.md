@@ -4,15 +4,13 @@ Welcome to this detailed guide on installing Magento 2 on a Google Cloud Virtual
 
 ## Step 1: Update Ubuntu Repositories
 
-Before we begin, ensure that your Ubuntu system is up to date by running the following command:
-
-allow root user
-```bash
-sudo passwd root
-```
-
 ```bash
 sudo apt-get update
+```
+## Step 2: allow login to root user and set up password for root
+
+```bash
+sudo passwd root
 ```
 
 Install Apache2
