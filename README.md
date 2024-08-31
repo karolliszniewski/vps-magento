@@ -6,6 +6,11 @@ Welcome to this detailed guide on installing Magento 2 on a Google Cloud Virtual
 
 Before we begin, ensure that your Ubuntu system is up to date by running the following command:
 
+allow root user
+```bash
+sudo passwd root
+```
+
 ```bash
 sudo apt-get update
 ```
@@ -23,3 +28,5 @@ add
         AllowOverride All
 </Directory>
 ```
+
+
