@@ -13,3 +13,13 @@ sudo apt-get update
 Install Apache2
 ```bash
 sudo apt-get install apache2 -y
+```
+
+edit "/etc/apache2/sites-available/000-default.conf"
+
+add
+```
+<Directory>
+        AllowOverride All
+</Directory>
+```
