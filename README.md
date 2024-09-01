@@ -42,4 +42,14 @@ Where 34.89.22.193 is IP address of server
 sudo apachectl configtest
 ```
 
+## Step 7: Enable rewrite on the server
+```bash
+ sudo a2enmod rewrite
+```
+
+## Step 8: Restart apache
+```bash
+sudo systemctl restart apache2
+```
+
 
