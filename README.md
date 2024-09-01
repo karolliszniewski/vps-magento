@@ -13,18 +13,33 @@ sudo apt-get update
 sudo passwd root
 ```
 
-Install Apache2
+## Step 3: Install Apache2
 ```bash
 sudo apt-get install apache2 -y
 ```
 
-edit "/etc/apache2/sites-available/000-default.conf"
+## Step 4: edit "/etc/apache2/sites-available/000-default.conf"
 
 add
 ```
-<Directory>
-        AllowOverride All
+<Directory /var/www/html>
+    AllowOverride All
 </Directory>
+```
+
+## Step 5: edit "/etc/apache2/apache2.conf"
+
+add
+```
+ServerName 34.89.22.193
+```
+
+Where 34.89.22.193 is IP address of server
+
+## Step 6: check if there is no syntax errors
+
+```bash
+sudo apachectl configtest
 ```
 
 
