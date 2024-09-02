@@ -58,4 +58,8 @@ sudo systemctl restart apache2
 sudo apt install php-{bcmath,common,curl,fpm,gd,intl,mbstring,mysql,soap,xml,xsl,zip,cli} libapache2-mod-php zip unzip -y
 ```
 
+## Step 10: edit /etc/apache2/mods-enabled/dir.conf
+
+Tell the web server to prefer PHP files (move index.php to front of the list)
+
 
