@@ -101,3 +101,25 @@ sudo systemctl reload apache2.service
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new_password';
 ```
 
+## Step 15: add user for magento
+```bash
+sudo adduser magento
+```
+
+```bash
+sudo usermod -g www-data magento
+```
+
+## update permissions
+```bash
+sudo chown magento:www-data /var/www/html/
+```
+
+## Generate keys
+public key is login private key is password
+```
+https://commercemarketplace.adobe.com/customer/accessKeys/
+```
+
+
+
