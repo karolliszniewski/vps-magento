@@ -92,3 +92,12 @@ sudo a2enconf phpmyadmin.conf
 sudo systemctl reload apache2.service
 ```
 
+## Step 14: Set password for root user in mysql
+```bash
+ sudo mysql -u root -p
+```
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new_password';
+```
+
