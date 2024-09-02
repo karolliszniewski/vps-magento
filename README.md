@@ -121,5 +121,20 @@ public key is login private key is password
 https://commercemarketplace.adobe.com/customer/accessKeys/
 ```
 
+## Install composer
+```bash
+curl -sS https://getcomposer.org/installer | php
+```
+
+```bash
+sudo mv composer.phar /usr/local/bin/composer
+```
+
+## Change directory
+```bash
+/var/www/html
+```
+##
+
 
 
