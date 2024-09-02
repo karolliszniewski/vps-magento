@@ -75,5 +75,20 @@ sudo apt-get install mysql-server -y
 
 # Step 13: Install phpmyadmin
 ```bash
-sudo apt-get install phpmyadmin php-mbstring php-gettext -y
+sudo apt-get install gettext -y    
 ```
+
+```bash
+sudo apt-get install phpmyadmin php-mbstring -y
+```
+
+```bash
+sudo systemctl restart apache2
+```
+
+```bash
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+sudo a2enconf phpmyadmin.conf
+sudo systemctl reload apache2.service
+```
+
