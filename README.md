@@ -52,4 +52,10 @@ sudo apachectl configtest
 sudo systemctl restart apache2
 ```
 
+## Step 9: Install PHP
+
+```bash
+sudo apt install php-{bcmath,common,curl,fpm,gd,intl,mbstring,mysql,soap,xml,xsl,zip,cli} libapache2-mod-php zip unzip -y
+```
+
 
