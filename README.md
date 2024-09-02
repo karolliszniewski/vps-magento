@@ -62,4 +62,18 @@ sudo apt install php-{bcmath,common,curl,fpm,gd,intl,mbstring,mysql,soap,xml,xsl
 
 Tell the web server to prefer PHP files (move index.php to front of the list)
 
+## Step 11: Restart apache
 
+```bash
+sudo systemctl restart apache2
+```
+
+## Step 12: Install Mysql
+```bash
+sudo apt-get install mysql-server -y
+```
+
+# Step 13: Install phpmyadmin
+```bash
+sudo apt-get install phpmyadmin php-mbstring php-gettext -y
+```
