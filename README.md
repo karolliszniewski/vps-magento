@@ -156,6 +156,11 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + && chown -R :www-data . && chmod u+x bin/magento
 ```
 
+## Step 24: Create user and db in phpmyadmin 
+
+![Screenshot 2024-09-03 191156](https://github.com/user-attachments/assets/43d6b847-a4e9-4ccc-a485-4315eaead761)
+
+
 
 
 
