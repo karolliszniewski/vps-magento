@@ -160,7 +160,29 @@ find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {
 
 ![Screenshot 2024-09-03 191156](https://github.com/user-attachments/assets/43d6b847-a4e9-4ccc-a485-4315eaead761)
 
-## Step 25: Setup magento using CLI
+## Step 25: Install elastric search
+
+```bash
+sudo apt install openjdk-11-jdk
+```
+
+```bash
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.14.0-amd64.deb
+```
+
+```bash
+sudo dpkg -i elasticsearch-7.14.0-amd64.deb
+```
+
+```bash
+sudo systemctl start elasticsearch
+```
+
+```bash
+sudo systemctl enable elasticsearch
+```
+
+## Step 26: Setup magento using CLI
 
 ```bash
 bin/magento setup:install \
@@ -180,6 +202,35 @@ bin/magento setup:install \
 --use-rewrites="1"
 
 ```
+
+
+
+
+## Step 27: if not working reinstall magento 
+
+```bash
+php bin/magento setup:uninstall
+```
+
+```bash
+php bin/magento setup:install --base-url=http://34.89.22.193/ --db-host=localhost --db-name=magento-master --db-user=magento-master --db-password=Hy2karolxbt --admin-firstname=Admin --admin-lastname=User --admin-email=admin@example.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
+```
+
+## Step 28 Distable cache for developer mode :
+```bash
+php bin/magento cache:disable
+php bin/magento cache:clean
+php bin/magento cache:flush
+```
+
+## Step 29: Distable two factor authentication
+```bash
+php bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
+php bin/magento module:disable Magento_TwoFactorAuth
+```
+
+## Step 30:
+
 
 
 
