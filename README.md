@@ -110,18 +110,18 @@ sudo adduser magento
 sudo usermod -g www-data magento
 ```
 
-## update permissions
+## Step 16: update permissions
 ```bash
 sudo chown magento:www-data /var/www/html/
 ```
 
-## Generate keys
+## Step 17: Generate keys
 public key is login private key is password
 ```
 https://commercemarketplace.adobe.com/customer/accessKeys/
 ```
 
-## Install composer
+## Step 18: Install composer
 ```bash
 curl -sS https://getcomposer.org/installer | php
 ```
@@ -130,11 +130,32 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
-## Change directory
+
+## Step 19: Switch User
 ```bash
-/var/www/html
+sudo su magento
 ```
-##
+
+## Step 20: Change directory
+```bash
+cd /var/www/html
+```
+
+## Step 21: remove index.html
+```bash
+rm index.html
+```
+
+## Step 22: Install magento using composer
+```bash
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.7 .
+```
+
+## Step 23: Set pre-installation permissions
+```bash
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + && chown -R :www-data . && chmod u+x bin/magento
+```
+
 
 
 
