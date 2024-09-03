@@ -160,6 +160,27 @@ find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {
 
 ![Screenshot 2024-09-03 191156](https://github.com/user-attachments/assets/43d6b847-a4e9-4ccc-a485-4315eaead761)
 
+## Step 25: Setup magento using CLI
+
+```bash
+bin/magento setup:install \
+--base-url="http://34.89.22.193/" \
+--db-host="localhost" \
+--db-name="magento-master" \
+--db-user="magento-master" \
+--db-password="password" \
+--admin-firstname="Admin" \
+--admin-lastname="User" \
+--admin-email="admin@example.com" \
+--admin-user="admin" \
+--admin-password="password" \
+--language="en_GB" \
+--currency="GBP" \
+--timezone="Europe/London" \
+--use-rewrites="1"
+
+```
+
 
 
 
