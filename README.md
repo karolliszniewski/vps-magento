@@ -301,6 +301,19 @@ php bin/magento setup:upgrade
 
 
 
+After installation I have this error 
+![image](https://github.com/user-attachments/assets/4cb4d2fb-8a31-4779-a53d-1ca47965d6f6)
+
+## Step 37: set permissions (user root user or sudo)
+```bash
+find /var/www/html -type f -exec chmod u+w {} \;
+find /var/www/html -type d -exec chmod u+w {} \;
+```
+
+
+
+
+
 
 
 
