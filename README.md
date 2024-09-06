@@ -2,6 +2,9 @@
 
 Welcome to this detailed guide on installing Magento 2 on a Google Cloud Virtual Private Server (VPS) running Ubuntu 24.04 LTS. Whether you're launching a new e-commerce platform or migrating an existing store, this repository provides a step-by-step walkthrough to help you get started.
 
+IP: 34.89.22.193
+Magento admin: http://34.89.22.193/admin_4j27d9y/
+
 ## Step 1: Update Ubuntu Repositories
 
 ```bash
@@ -229,7 +232,63 @@ php bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
 php bin/magento module:disable Magento_TwoFactorAuth
 ```
 
-## Step 30:
+## Step 30: Update PHP memory limit in '/etc/php/8.3/apache2/php.ini' to 4GB
+```bash
+memory_limit = 4048M
+```
+
+## Step 31: Setup Cronjobs
+```bash
+php bin/magento cron:install
+```
+
+## Step 32: Enable Developer mode
+```bash
+php bin/magento deploy:mode:set developer
+```
+
+## Step 33: Clear the cached generated folders
+```bash
+rm -rf generated/metadata/* generated/code/*
+```
+
+## Step 34: Clear Cache
+```bash
+php bin/magento c:c
+```
+
+## Step 35: Enable Backups
+Stores->Configuation
+
+![image](https://github.com/user-attachments/assets/c7eade94-9891-4144-a9e6-11c746c51449)
+
+
+Advanced->System
+
+![image](https://github.com/user-attachments/assets/edfc8047-2269-4d64-a1ae-18fbe02440f1)
+
+Backup Settings-> Change Enable Backup from No to Yes
+
+![image](https://github.com/user-attachments/assets/a77b64dc-a5c5-4087-a77c-ccccceff69f0)
+
+Click Save Config
+
+![image](https://github.com/user-attachments/assets/13a8a5ff-97d4-4c1a-ab5b-a0ff1e70f359)
+
+Refresh Configuration
+
+![image](https://github.com/user-attachments/assets/17620403-6bf2-4b22-bc6a-fe280d051f24)
+
+Go to System->Backups
+![image](https://github.com/user-attachments/assets/e6303ef2-5d27-483a-9f48-030bfad5b042)
+
+Click Database and Media Backup
+
+![image](https://github.com/user-attachments/assets/ce2ed545-4d97-4724-8f3a-459495a712fb)
+
+
+
+
 
 
 
