@@ -286,9 +286,18 @@ Click Database and Media Backup
 
 ![image](https://github.com/user-attachments/assets/ce2ed545-4d97-4724-8f3a-459495a712fb)
 
+Set a name and click OK
 
+![image](https://github.com/user-attachments/assets/3dc5b11a-1192-4b7d-875e-8935a049e439)
 
+## Step 36: Upload Sample Data
+```bash
+php bin/magento sampledata:deploy
+```
 
+```bash
+php bin/magento setup:upgrade
+```
 
 
 
