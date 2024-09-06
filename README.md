@@ -310,6 +310,22 @@ find /var/www/html -type f -exec chmod u+w {} \;
 find /var/www/html -type d -exec chmod u+w {} \;
 ```
 
+Still the same error
+
+![image](https://github.com/user-attachments/assets/66697b96-47db-423b-ba97-8f85ffb5bee1)
+
+
+## Step 38: Change ownership (use root or sudo)
+```bash
+sudo usermod -a -G www-data magento
+sudo chown -R www-data:magento /var/www/html
+
+sudo find /var/www/html -type d -exec chmod 755 {} \;
+sudo find /var/www/html -type f -exec chmod 644 {} \;
+sudo find /var/www/html -type d -exec chmod 775 {} \;
+sudo find /var/www/html -type f -exec chmod 644 {} \;
+```
+
 
 
 
